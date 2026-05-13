@@ -1,0 +1,15 @@
+{% for router in routers %}
+! === {{ router.name }} ===
+interface {{ router.loopback.name }}
+ description Loopback of {{ router.name }}
+ ip address {{ router.loopback.ip }} {{ router.loopback.mask }}
+ no shutdown
+!
+{% for iface in router.interfaces %}
+interface {{ iface.name }}
+ description {{ iface.desc }}
+ ip address {{ iface.ip }} {{ iface.mask }}
+ no shutdown
+!
+{% endfor %}
+{% endfor %}
