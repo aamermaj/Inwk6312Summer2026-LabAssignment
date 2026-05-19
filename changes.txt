@@ -1,4 +1,0 @@
-interface GigabitEthernet3
-description This is set via Netmiko from a text file
-
-
